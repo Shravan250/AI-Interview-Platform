@@ -3,6 +3,7 @@ import { dummyInterviews } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import InterviewCard from "@/components/InterviewCard"
 
 const page = () => {
   return (
@@ -26,8 +27,8 @@ const page = () => {
         <h2>Your Interviews</h2>
 
         <div className="interviews-section">
-          {dummyInterviews.map((interview) = > (
-            <InterviewCard/>
+          {dummyInterviews.map((interview) => (
+            <InterviewCard {...interview} key={interview.id}/> 
           ))} 
         </div>
       </section>
@@ -36,7 +37,11 @@ const page = () => {
         <h2>Take an Interview</h2>
 
         <div className="interviews-section">
-          <p>There are no interviews Available</p>
+          {dummyInterviews.map((interview) => (
+            <InterviewCard {...interview} key={interview.id}/> 
+          ))} 
+
+          {/* <p>You haven&apos;t taken any interviews</p> */}
         </div>
       </section>
     </>
