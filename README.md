@@ -3,7 +3,7 @@
 **Set Up Environment Variables**
 
 Create a new file named `.env.local` in the root of your project and add the following content:
-
+hello
 ```env
 NEXT_PUBLIC_VAPI_WEB_TOKEN=
 NEXT_PUBLIC_VAPI_WORKFLOW_ID=
