@@ -2,6 +2,8 @@ import { isAuthenticated } from "@/lib/actions/auth.action";
 import { redirect } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
+import Link from "next/link";
 import { ReactNode } from "react";
 
 
