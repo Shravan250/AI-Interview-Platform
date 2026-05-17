@@ -332,3 +332,184 @@
     transform: translateY(0);
   }
 }
+
+
+/* ─── Resume Upload Feature ─────────────────────────────────────────────────
+   Add these styles to your globals.css file
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* Drop zone */
+.resume-upload {
+  @apply flex flex-col w-full max-w-2xl;
+}
+
+.resume-dropzone {
+  @apply relative flex flex-col items-center justify-center w-full
+         min-h-[220px] rounded-2xl border-2 border-dashed border-gray-700
+         bg-dark-200 cursor-pointer transition-all duration-200 select-none;
+}
+
+.resume-dropzone--active {
+  @apply border-primary-200 bg-dark-300 scale-[1.01];
+}
+
+.resume-dropzone--has-file {
+  @apply border-primary-200/60;
+}
+
+.resume-dropzone:hover {
+  @apply border-gray-500 bg-dark-300;
+}
+
+.resume-dropzone__content {
+  @apply flex flex-col items-center gap-3 px-6 py-8 text-center pointer-events-none;
+}
+
+.resume-dropzone__icon-wrap {
+  @apply flex items-center justify-center w-14 h-14 rounded-xl bg-dark-300;
+}
+
+.resume-dropzone__icon {
+  @apply opacity-70;
+}
+
+.resume-dropzone__title {
+  @apply text-lg font-semibold text-white;
+}
+
+.resume-dropzone__filename {
+  @apply text-base font-semibold text-primary-200 truncate max-w-xs;
+}
+
+.resume-dropzone__sub {
+  @apply text-sm text-gray-400;
+}
+
+/* Error */
+.resume-error {
+  @apply mt-3 text-sm text-red-400 font-medium;
+}
+
+/* Spinner */
+.resume-spinner {
+  @apply inline-block w-5 h-5 rounded-full border-2 border-gray-600 border-t-primary-200 animate-spin;
+}
+
+.resume-spinner--sm {
+  @apply w-4 h-4;
+}
+
+.resume-upload__parsing {
+  @apply flex items-center justify-center gap-2;
+}
+
+/* ─── Review Step ─────────────────────────────────────────────────────────── */
+
+.resume-review {
+  @apply flex flex-col gap-6 w-full max-w-2xl;
+}
+
+.resume-review__summary {
+  @apply flex gap-3 items-start p-4 rounded-xl bg-dark-200 border border-gray-700;
+}
+
+.resume-review__summary-icon {
+  @apply text-primary-200 text-lg mt-0.5 shrink-0;
+}
+
+.resume-review__hint {
+  @apply text-sm text-gray-400;
+}
+
+.resume-review__grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 gap-5;
+}
+
+.resume-review__actions {
+  @apply flex flex-col sm:flex-row gap-3 mt-2;
+}
+
+/* Field */
+.resume-field {
+  @apply flex flex-col gap-2;
+}
+
+.resume-field--full {
+  @apply sm:col-span-2;
+}
+
+.resume-field__label {
+  @apply text-sm font-medium text-gray-300;
+}
+
+.resume-field__input {
+  @apply w-full px-4 py-2.5 rounded-xl bg-dark-200 border border-gray-700
+         text-white text-sm focus:outline-none focus:border-primary-200
+         transition-colors duration-150;
+}
+
+.resume-field__pills {
+  @apply flex flex-wrap gap-2;
+}
+
+/* Pills (level / type selector) */
+.resume-pill {
+  @apply px-3 py-1.5 rounded-lg text-sm font-medium border border-gray-700
+         bg-dark-200 text-gray-300 transition-all duration-150 cursor-pointer;
+}
+
+.resume-pill:hover {
+  @apply border-gray-500 text-white;
+}
+
+.resume-pill--active {
+  @apply border-primary-200 bg-primary-200/10 text-primary-200;
+}
+
+/* Slider */
+.resume-slider {
+  @apply w-full accent-primary-200 cursor-pointer;
+}
+
+.resume-slider__labels {
+  @apply flex justify-between text-xs text-gray-500 mt-1;
+}
+
+/* Tech stack tags */
+.resume-techstack {
+  @apply flex flex-wrap gap-2 p-3 rounded-xl bg-dark-200 border border-gray-700
+         min-h-[56px] focus-within:border-primary-200 transition-colors duration-150;
+}
+
+.resume-tech-tag {
+  @apply flex items-center gap-1.5 px-3 py-1 rounded-lg bg-dark-300
+         border border-gray-600 text-sm text-white;
+}
+
+.resume-tech-tag__remove {
+  @apply text-gray-400 hover:text-red-400 leading-none transition-colors
+         text-base font-bold cursor-pointer;
+}
+
+.resume-tech-input {
+  @apply flex-1 min-w-[120px] bg-transparent text-sm text-white placeholder-gray-500
+         focus:outline-none;
+}
+
+/* ─── Generating Step ─────────────────────────────────────────────────────── */
+
+.resume-generating {
+  @apply flex items-center justify-center w-full min-h-[260px];
+}
+
+.resume-generating__inner {
+  @apply flex flex-col items-center gap-5;
+}
+
+.resume-generating__inner .resume-spinner {
+  @apply w-10 h-10 border-[3px];
+}
+
+.resume-generating__msg {
+  @apply text-gray-300 text-base animate-pulse;
+}

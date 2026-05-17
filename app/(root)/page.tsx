@@ -31,9 +31,14 @@ async function Home() {
             Practice real interview questions & get instant feedback
           </p>
 
-          <Button asChild className="btn-primary max-sm:w-full">
-            <Link href="/interview">Start an Interview</Link>
-          </Button>
+          <div className="flex flex-col gap-3 max-sm:w-full">
+            <Button asChild className="btn-primary max-sm:w-full">
+              <Link href="/interview">Start an Interview</Link>
+            </Button>
+            <Button asChild className="btn-primary max-sm:w-full">
+              <Link href="/resume">Upload Resume</Link>
+            </Button>
+          </div>
         </div>
 
         <Image

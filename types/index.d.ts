@@ -97,3 +97,19 @@ interface InterviewFormProps {
 interface TechIconProps {
   techStack: string[];
 }
+
+
+// Resume Parsing
+
+interface ResumeData {
+  role: string;
+  level: "Junior" | "Mid" | "Senior" | "Lead" | "Principal";
+  techstack: string[];
+  type: "Technical" | "Behavioral" | "Mixed";
+  amount: number;
+  summary: string;
+}
+
+interface ResumeUploadProps {
+  userId?: string;
+}
