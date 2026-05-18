@@ -513,3 +513,32 @@
 .resume-generating__msg {
   @apply text-gray-300 text-base animate-pulse;
 }
+
+/* ─── Send Feedback Email Button ─────────────────────────────────────────────
+   Append to globals.css
+   ─────────────────────────────────────────────────────────────────────────── */
+
+.send-email-btn {
+  @apply flex items-center gap-2 px-5 py-2.5 rounded-xl
+         border border-gray-700 bg-dark-200
+         text-sm font-medium text-gray-300
+         transition-all duration-200 cursor-pointer
+         hover:border-gray-500 hover:text-white;
+}
+
+.send-email-btn:disabled {
+  @apply cursor-not-allowed opacity-70;
+}
+
+.send-email-btn--sent {
+  @apply border-green-700/60 bg-green-900/20 text-green-400;
+}
+
+.send-email-btn--error {
+  @apply border-red-700/60 bg-red-900/20 text-red-400;
+}
+
+.send-email-btn__spinner {
+  @apply inline-block w-4 h-4 rounded-full border-2 border-gray-600
+         border-t-primary-200 animate-spin;
+}

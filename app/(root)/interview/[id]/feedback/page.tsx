@@ -1,3 +1,4 @@
+// app/(root)/interview/[id]/feedback/page.tsx
 import dayjs from "dayjs";
 import Link from "next/link";
 import Image from "next/image";
@@ -9,6 +10,7 @@ import {
 } from "@/lib/actions/general.action";
 import { Button } from "@/components/ui/button";
 import { getCurrentUser } from "@/lib/actions/auth.action";
+import SendFeedbackEmail from "@/components/SendFeedbackEmail";
 
 const Feedback = async ({ params }: RouteParams) => {
   const { id } = await params;
@@ -91,6 +93,24 @@ const Feedback = async ({ params }: RouteParams) => {
           ))}
         </ul>
       </div>
+
+      {/* Email report button — only render if feedback exists */}
+      {feedback && (
+        <div className="flex justify-center">
+          <SendFeedbackEmail
+            userName={user?.name!}
+            role={interview.role}
+            interviewType={interview.type}
+            createdAt={feedback.createdAt}
+            totalScore={feedback.totalScore}
+            categoryScores={feedback.categoryScores}
+            strengths={feedback.strengths}
+            areasForImprovement={feedback.areasForImprovement}
+            finalAssessment={feedback.finalAssessment}
+            interviewId={id}
+          />
+        </div>
+      )}
 
       <div className="buttons">
         <Button className="btn-secondary flex-1">
